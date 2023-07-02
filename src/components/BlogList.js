@@ -1,6 +1,6 @@
 import BlogItem from "./BlogItem";
 
-function BlogList({ blogPosts }) {
+function BlogList({ blogPosts, deleteBlogPost }) {
   return (
     <div
       style={{
@@ -10,7 +10,11 @@ function BlogList({ blogPosts }) {
     >
       <h1>BlogList</h1>
       {blogPosts.map((blogPost) => (
-        <BlogItem key={blogPost.id} blogPost={blogPost} />
+        <BlogItem
+          key={blogPost.id}
+          blogPost={blogPost}
+          deleteBlogPost={deleteBlogPost}
+        />
       ))}
     </div>
   );

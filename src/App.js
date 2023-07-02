@@ -35,9 +35,15 @@ function App() {
       setBlogPosts([...blogPosts, newBlogPost])
   }
 
+  function deleteBlogPost(blogPostId) {
+    const filteredBlogPosts = blogPosts.filter(blogPost => blogPost.id !== blogPostId)
+
+    setBlogPosts(filteredBlogPosts)
+  }
+
   return <div className="App">
     <Header blogPostCount={blogPosts.length}/>
-    <BlogList blogPosts={blogPosts} />
+    <BlogList blogPosts={blogPosts} deleteBlogPost={deleteBlogPost}/>
     <AddBlogPost handleAddBlogPost={handleAddBlogPost}/>
   </div>;
 }

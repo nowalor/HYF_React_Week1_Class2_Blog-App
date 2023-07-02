@@ -12,6 +12,9 @@ function AddBlogPost({ handleAddBlogPost }) {
     e.preventDefault();
 
     handleAddBlogPost(title, content);
+    
+    setTitle('')
+    setContent('')
   }
 
   return (
